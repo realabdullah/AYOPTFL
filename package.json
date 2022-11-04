@@ -14,5 +14,9 @@
   "devDependencies": {
     "@parcel/transformer-sass": "2.7.0",
     "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "gsap": "^3.11.3",
+    "locomotive-scroll": "^4.1.4"
   }
 }

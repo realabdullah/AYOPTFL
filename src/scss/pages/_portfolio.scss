@@ -257,6 +257,7 @@ body {
 
                     &-details {
                         margin-top: pxToRem(30);
+                        // display: flex;
                         display: none;
                         align-items: flex-start;
                         gap: pxToRem(135);
