@@ -5,6 +5,7 @@ const interest = document.getElementsByClassName("interest__section-summary");
 const details = document.getElementsByClassName("interest__section-details");
 let expanded = false;
 
+let i;
 for (i = 0; i < interest.length; i++) {
     let tl = new Timeline({
         paused: true,

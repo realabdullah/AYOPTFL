@@ -1,4 +1,3 @@
-import { gsap,  } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 
 // Mobile Nav
