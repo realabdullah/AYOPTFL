@@ -1,4 +1,7 @@
+import { gsap } from "gsap";
 import { Timeline } from "gsap/gsap-core";
+
+gsap.registerPlugin(Timeline);
 
 // Mobile Nav
 const toggle = document.getElementById("toggle");

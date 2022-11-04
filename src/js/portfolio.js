@@ -1,5 +1,8 @@
+import { gsap } from "gsap";
 import { Timeline } from "gsap/gsap-core";
 import { Tween } from "gsap/gsap-core";
+
+gsap.registerPlugin(Timeline, Tween);
 
 const interest = document.getElementsByClassName("interest__section-summary");
 const details = document.getElementsByClassName("interest__section-details");
