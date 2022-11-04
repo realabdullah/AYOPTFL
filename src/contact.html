@@ -5,16 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio -- A-yo!</title>
+    <title>Contact Me -- A-yo!</title>
 
     <!-- Style -->
     <link rel="stylesheet" href="/src/scss/main.scss">
-
-    <!-- GSap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollToPlugin.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -30,9 +24,9 @@
         <nav class="header__nav--sitelinks">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/src/pages/portfolio.html">Portfolio</a></li>
+                <li><a href="/src/portfolio.html">Portfolio</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="/src/pages/contact.html">Contact</a></li>
+                <li><a href="/src/contact.html">Contact</a></li>
             </ul>
         </nav>
         <nav class="header__nav--extlinks">
@@ -81,8 +75,8 @@
             <div class="navbar-content">
                 <ul>
                     <li><a class="nav__link" data-text="1" href="/">Home</a></li>
-                    <li><a class="nav__link" data-text="2" href="/src/pages/portfolio.html">Portfolio</a></li>
-                    <li><a class="nav__link" data-text="3" href="/src/pages/contact.html">Contact</a></li>
+                    <li><a class="nav__link" data-text="2" href="/src/portfolio.html">Portfolio</a></li>
+                    <li><a class="nav__link" data-text="3" href="/">Contact</a></li>
                     <li><a class="nav__link" data-text="4" href="/">About</a></li>
                 </ul>
                 <button class="nav__button">Resumé</button>
@@ -119,141 +113,27 @@
             </div>
         </div>
     </header>
-
-    <main class="about__container">
-        <section class="about">
-            <h4 class="about__header">Creative Designer<span>.</span></h4>
-            <p class="about__paragraph">I’m a designer with a penchant for learning new things and expanding my
-                horizons.
-                I’ve worked at various roles from my teenage years ranging from social media management to CMS
-                management &
-                Product Design.
-                <span>I see every project as an avenue to grow and learn new things while also bringing my best to the
-                    table
-                    and giving it my all.</span>
-            </p>
-        </section>
-
-        <section class="interests">
-            <h4 class="interests__header">Personal Interests<span>.</span></h4>
-
-            <div class="interests__section">
-                <div class="interest__section">
-                    <div class="interest__section-summary">
-                        <h3 class="interest__section-summary-title">Books<span>.</span></h3>
-                        <svg id="expand" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"
-                            fill="none">
-                            <path d="M12.5 28.5V16H0V13H12.5V0.5H15.5V13H28V16H15.5V28.5H12.5Z" fill="black" />
-                        </svg>
+    <main class="container">
+        <div class="contact__body">
+            <h4>Get in <span>touch</span> with me<span>.</span></h4>
+            <div class="contact__form">
+                <form>
+                    <label class="name" for="name">
+                        <input type="text" placeholder="NAME" required>
+                    </label>
+                    <label class="email" for="email">
+                        <input type="email" placeholder="E-MAIL" required>
+                    </label>
+                    <label class="message" for="message">
+                        <textarea name="message" placeholder="MESSAGE" cols="30" rows="5" required></textarea>
+                    </label>
+                    <div class="submit__btn">
+                        <button type="submit">Send</button>
                     </div>
-                    <div class="interest__section-details">
-                        <p class="interest__story">I enjoy reading fictional books quite a bit, I believe it’s a good
-                            way to excercise my imagination quite a bit. I’m still unable to decide whether my favourite
-                            genre is mystery or thriller. At the moment I’m reading Dan Brown’s Digital Fortress and
-                            also going through George R.R. Martin’s series of Fire and Ice books with the hope of
-                            catching up to him before he finishes up the series.</p>
-                        <div class="interest__image">
-                            <img src="/src/assets/images/digital-fortress.png" alt="digital-fortress">
-                            <img src="/src/assets/images/GOT.png" alt="GOT">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="interest__section">
-                    <div class="interest__section-summary">
-                        <h3 class="interest__section-summary-title">Music<span>.</span></h3>
-                        <svg id="expand" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"
-                            fill="none">
-                            <path d="M12.5 28.5V16H0V13H12.5V0.5H15.5V13H28V16H15.5V28.5H12.5Z" fill="black" />
-                        </svg>
-                    </div>
-                    <div class="interest__section-details">
-                        <div class="interest__detail">
-                            <p class="interest__story">Music is one of the things I consider to be among the greatest
-                                gifts of life. While my taste may change from time to time, these are some of my
-                                favourite albums & tracks</p>
-                            <ul>
-                                <li>Jon Bellion - The Human Condition</li>
-                                <li>AJR - The Click (Deluxe Edition)</li>
-                                <li>The Weeknd - Blinding Lights</li>
-                                <li>Cannons - Fire for you</li>
-                            </ul>
-                            <a href="#">My Spotify Playlist</a>
-                        </div>
-                        <div class="interest__images">
-                            <img src="/src/assets/images/human-condition.png" alt="human-condition">
-                            <img src="/src/assets/images/the-click.png" alt="the-click">
-                            <img src="/src/assets/images/blinding-light.png" alt="blinding-light">
-                            <img src="/src/assets/images/artworks.png" alt="artworks">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="interest__section">
-                    <div class="interest__section-summary">
-                        <h3 class="interest__section-summary-title">Gaming<span>.</span></h3>
-                        <svg id="expand" xmlns="http://www.w3.org/2000/svg" width="28" height="29" viewBox="0 0 28 29"
-                            fill="none">
-                            <path d="M12.5 28.5V16H0V13H12.5V0.5H15.5V13H28V16H15.5V28.5H12.5Z" fill="black" />
-                        </svg>
-                    </div>
-                    <div class="interest__section-details">
-                        <p class="interest__story">Gaming got me into design and it’s fair to say I play quite a few
-                            games ranging from multiplayer fps like Call of Duty and Apex Legends to RPGs such as
-                            Skyrim. At the moment I’m currently enjoying the fascinating world of No Man’s Sky and the
-                            occasional run of Hades.</p>
-                        <div class="interest__image">
-                            <img src="/src/assets/images/no-mans-sky.png" alt="no-mans-sky">
-                            <img src="/src/assets/images/hades.png" alt="hades">
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
-        </section>
-
-        <section class="certificates">
-            <h4 class="certificates__header">Certificates<span>.</span></h4>
-
-            <div class="certificates__table">
-                <div class="certificate">
-                    <span>CERTIFICATE</span>
-                    <span>PLATFORM</span>
-                    <span>YEAR</span>
-                </div>
-                <div class="certificate">
-                    <span>UI/UX Design</span>
-                    <span>The Zuri Team</span>
-                    <span>2021</span>
-                </div>
-                <div class="certificate">
-                    <span>Cybersecurity Essentials</span>
-                    <span>CISCO Networking Academy</span>
-                    <span>2020</span>
-                </div>
-                <div class="certificate">
-                    <span>IT Essentials</span>
-                    <span>CISCO Networking Academy</span>
-                    <span>2019</span>
-                </div>
-                <div class="certificate">
-                    <span>Introduction to Cybersecurity</span>
-                    <span>CISCO Networking Academy</span>
-                    <span>2018</span>
-                </div>
-                <div class="certificate">
-                    <span>Get Connected</span>
-                    <span>CISCO Networking Academy</span>
-                    <span>2018</span>
-                </div>
-                <div class="certificate">
-                    <span>Introduction to Graphic Design</span>
-                    <span>New Wolex Computer Institute</span>
-                    <span>2013</span>
-                </div>
-            </div>
-        </section>
+        </div>
     </main>
-
     <footer>
         <section class="__footer">
             <div class="__footer--section">
@@ -271,9 +151,9 @@
                         <span class="sitemap__header">SITEMAP</span>
                         <ul>
                             <li><a href="/">HOME</a></li>
-                            <li><a href="/src/pages/portfolio.html">PORTFOLIO</a></li>
+                            <li><a href="/src/portfolio.html">PORTFOLIO</a></li>
                             <li><a href="#">ABOUT</a></li>
-                            <li><a href="/src/pages/contact.html">CONTACT</a></li>
+                            <li><a href="/src/contact.html">CONTACT</a></li>
                         </ul>
                     </div>
                     <div class="sitemap item-2">
@@ -306,9 +186,6 @@
             </div>
         </section>
     </footer>
-
-    <!-- <script src="/assets/script/menu.js"></script>
-    <script src="/assets/script/portfolio.js"></script> -->
 </body>
 
 </html>
