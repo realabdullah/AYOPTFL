@@ -1,0 +1,27 @@
+.contact__me {
+    margin: pxToRem(60) auto;
+    margin-bottom: 0;
+    padding: pxToRem(16) pxToRem(32);
+    border: none;
+    position: relative;
+    background: $col-black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: pxToRem(16);
+    line-height: pxToRem(19);
+    color: $col-white;
+
+    &:hover::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        right: -6px;
+        bottom: -6px;
+        border: 2px solid $col-black;
+        width: -webkit-fill-available;
+        height: inherit;
+        cursor: pointer;
+    }
+}

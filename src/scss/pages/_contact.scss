@@ -1,0 +1,128 @@
+.container {
+    background: $col-white;
+    max-width: 940px;
+    margin: 0 auto;
+    
+    @media (max-width: 700px) {
+        padding: 0 pxToRem(20);
+    }
+
+    .contact__body {
+        padding: pxToRem(144) 0;
+
+        @media (max-width: 700px) {
+            padding: pxToRem(35) 0;
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: pxToRem(96);
+            line-height: pxToRem(115);
+            color: $col-black;
+
+            @media (max-width: 700px) {
+                font-size: pxToRem(27);
+                line-height: pxToRem(32);
+            }
+
+            span {
+                color: $col-navyBlue;
+                font-style: italic;
+            }
+        }
+
+        .contact__form {
+            margin-top: pxToRem(64);
+
+            @media (max-width: 700px) {
+                margin-top: pxToRem(16);
+            }
+
+            form {
+                width: 100%;
+                background: $col-navyBlue;
+                max-width: 820px;
+                padding: pxToRem(93) pxToRem(74);
+
+                @media (max-width: 700px) {
+                    width: auto;
+                    padding: pxToRem(93) pxToRem(24);
+                    max-width: none;
+                    display: flex;
+                    flex-direction: column;
+                    gap: pxToRem(56);
+                }
+
+                .name {
+                    width: 45%;
+                    float: left;
+
+                    @media (max-width: 700px) {
+                        float: unset;
+                        width: 100%;
+                    }
+                }
+
+                .email {
+                    width: 45%;
+                    float: right;
+
+                    @media (max-width: 700px) {
+                        float: unset;
+                        width: 100%;
+                    }
+                }
+
+                .message {
+                    width: 100%;
+                    float: none;
+                }
+
+                input,
+                textarea {
+                    width: 100%;
+                    border: none;
+                    border-radius: 0;
+                    border-bottom: 1px solid $col-white;
+                    background: transparent;
+                    color: $col-fadedWhite;
+                    font-weight: 500;
+                    font-size: pxToRem(16);
+                    line-height: 120%;
+                    padding-bottom: 10px;
+                    outline: none;
+
+                    &::placeholder {
+                        color: $col-fadedWhite;
+                    }
+                }
+
+                textarea {
+                    margin-top: pxToRem(120);
+
+                    @media (max-width: 700px) {
+                        margin-top: unset;
+                    }
+                }
+
+                .submit__btn {
+                    margin-top: pxToRem(48);
+
+                    @media (max-width: 700px) {
+                        margin-top: pxToRem(14);
+                    }
+
+                    button {
+                        border: 2px solid $col-white;
+                        padding: pxToRem(8) pxToRem(24);
+                        font-weight: 600;
+                        font-size: pxToRem(16);
+                        line-height: pxToRem(19);
+                        color: $col-white;
+                        background: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
