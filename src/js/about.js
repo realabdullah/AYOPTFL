@@ -16,15 +16,18 @@ for (i = 0; i < interest.length; i++) {
 
     Tween.set(details[i], { 
         autoAlpha: 0, 
-        yPercent: 100,
+        visiblity: "hidden",
+        height: 0,
+        yPercent: -30,
     });
 
     tl.to(details[i], {
-        display: "flex",
         autoAlpha: 1,
         yPercent: 0,
-        duration: 0.5,
-        ease: "Cubic.easeOut"
+        visiblity: "visible",
+        height: "auto",
+        duration: 0.8,
+        ease: "power1.inOut"
     }, 0);
 
     tl.progress(1).progress(0);
