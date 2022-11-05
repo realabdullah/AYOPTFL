@@ -1,5 +1,4 @@
 main {
-
     .home__hero {
         background: $col-navyBlue;
 
@@ -31,7 +30,6 @@ main {
                 }
 
                 .header__nav--sitelinks {
-
                     @media (max-width: 700px) {
                         display: none;
                     }
@@ -41,7 +39,6 @@ main {
                         gap: 3rem;
 
                         li {
-
                             a {
                                 text-decoration: none;
                                 color: $col-fadedWhite;
@@ -54,7 +51,7 @@ main {
                                     color: $col-white;
                                     padding-bottom: 3px;
                                     border-bottom: 2px solid $col-white;
-                                    transition: .2s ease-in-out;
+                                    transition: 0.2s ease-in-out;
                                 }
                             }
 
@@ -68,7 +65,6 @@ main {
                 }
 
                 .header__nav--extlinks {
-
                     @media (max-width: 700px) {
                         display: none;
                     }
@@ -78,7 +74,6 @@ main {
                         gap: 1.6rem;
 
                         li {
-
                             a {
                                 text-decoration: none;
                             }
@@ -100,11 +95,11 @@ main {
                         z-index: 20;
 
                         svg {
-
                             .line {
                                 fill: none;
                                 transition-delay: 0.6s, 0;
-                                transition-property: stroke, stroke-dasharray, stroke-dashoffset;
+                                transition-property: stroke, stroke-dasharray,
+                                    stroke-dashoffset;
                                 transition-timing-function: ease;
                                 transition-duration: 400ms;
                                 stroke: $col-white;
@@ -173,7 +168,7 @@ main {
                 span {
                     font-weight: 700;
                     // font-size: pxToRem(180);
-                    // font-size: clamp(3.125rem, 1.5rem + 8.125vw, 11.25rem); 
+                    // font-size: clamp(3.125rem, 1.5rem + 8.125vw, 11.25rem);
                     @include fluid-type(350px, 1500px, 44px, 200px);
                     color: $col-white;
 
@@ -262,7 +257,7 @@ main {
                     font-weight: 600;
                     font-size: pxToRem(24);
                     line-height: pxToRem(29);
-                    color: $col-black
+                    color: $col-black;
                 }
 
                 .__card--desc {
@@ -377,7 +372,6 @@ main {
                 display: none;
             }
 
-
             @media (max-width: 700px) {
                 grid-template-columns: repeat(1, 1fr);
                 gap: pxToRem(30);
@@ -386,9 +380,34 @@ main {
             }
 
             .featured__projects--card {
+                position: relative;
+
+                .view__project {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    padding: pxToRem(56) pxToRem(22);
+                    font-weight: 600;
+                    font-size: pxToRem(32);
+                    line-height: 100%;
+                    background: $col-navyBlue;
+                    color: $col-white;
+                    text-decoration: none;
+                    border-radius: 50%;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    cursor: pointer;
+
+                    .view__project {
+                        transition: .5s ease;
+                        opacity: 1;
+                    }
+                }
 
                 img {
-
                     @media (max-width: 700px) {
                         width: 100%;
                         object-fit: cover;
@@ -423,6 +442,10 @@ main {
                         line-height: pxToRem(29);
                     }
                 }
+            }
+
+            .short-card {
+                height: 300px;                
             }
         }
     }
@@ -537,7 +560,6 @@ main {
     }
 }
 
-
 footer {
     background: $col-navyBlue;
     padding: 0 pxToRem(48);
@@ -556,7 +578,6 @@ footer {
         }
 
         &--section {
-
             .__footer--body {
                 padding: pxToRem(143) 0;
                 // display: flex;
@@ -567,29 +588,29 @@ footer {
                 grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
                 grid-template-areas:
-                    'label0 label0 label1 label2 label3'
-                    'label0 label0 label1 label2 label3';
+                    "label0 label0 label1 label2 label3"
+                    "label0 label0 label1 label2 label3";
                 gap: 4rem;
 
                 @media (max-width: 514px) {
                     grid-template-areas:
-                        'label0 label0 label0 label0'
-                        'label1 label1 label2 label2'
-                        'label3 label3 label3 label3';
+                        "label0 label0 label0 label0"
+                        "label1 label1 label2 label2"
+                        "label3 label3 label3 label3";
                     gap: 0;
                 }
 
                 @media (min-width: 515px) and (max-width: 900px) {
                     grid-template-areas:
-                        'label0 label0 label0 label0'
-                        'label1 label2 label3 label3';
+                        "label0 label0 label0 label0"
+                        "label1 label2 label3 label3";
                     gap: 5rem;
                 }
 
                 @media (min-width: 901px) and (max-width: 1145px) {
                     grid-template-areas:
-                        'label0 label1 label1 label2'
-                        'label3 label3 label3 label3';
+                        "label0 label1 label1 label2"
+                        "label3 label3 label3 label3";
                 }
 
                 .item-0 {
@@ -609,7 +630,6 @@ footer {
                 }
 
                 &-logo {
-
                     @media (max-width: 700px) {
                         // width: 100%;
                         width: max-content;
@@ -623,7 +643,6 @@ footer {
                     }
 
                     svg {
-
                         @media (max-width: 700px) {
                             // width: 100%;
                             width: max-content;
