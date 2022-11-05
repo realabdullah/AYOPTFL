@@ -16,6 +16,7 @@
     "parcel": "^2.7.0"
   },
   "dependencies": {
+    "emailjs": "^4.0.1",
     "gsap": "^3.11.3",
     "locomotive-scroll": "^4.1.4"
   }

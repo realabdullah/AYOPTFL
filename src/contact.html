@@ -117,18 +117,18 @@
         <div class="contact__body">
             <h4>Get in <span>touch</span> with me<span>.</span></h4>
             <div class="contact__form">
-                <form>
+                <form id="contact-form">
                     <label class="name" for="name">
-                        <input type="text" placeholder="NAME" required>
+                        <input id="name" name="name" type="text" placeholder="NAME" required>
                     </label>
                     <label class="email" for="email">
-                        <input type="email" placeholder="E-MAIL" required>
+                        <input id="email" name="email" type="email" placeholder="E-MAIL" required>
                     </label>
                     <label class="message" for="message">
-                        <textarea name="message" placeholder="MESSAGE" cols="30" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="MESSAGE" cols="30" rows="5" required></textarea>
                     </label>
                     <div class="submit__btn">
-                        <button type="submit">Send</button>
+                        <button id="submit-btn" type="submit">Send</button>
                     </div>
                 </form>
             </div>
@@ -190,6 +190,8 @@
     </footer>
 
     <script src="/src/js/menu.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="/src/js/contact.js" type="module"></script>
 </body>
 
 </html>
