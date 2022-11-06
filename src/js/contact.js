@@ -6,10 +6,12 @@ const sendEmail = async () => {
     try {
         document.querySelector('#submit-btn').innerHTML = 'Sending...';
         emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, document.querySelector('#contact-form'));
-        document.querySelector('#name').value = '';
-        document.querySelector('#email').value = '';
-        document.querySelector('#message').value = '';
-        document.querySelector('#submit-btn').innerHTML = 'Send';
+        setTimeout(() => {
+            document.querySelector('#submit-btn').innerHTML = 'Send';
+            document.querySelector('#name').value = '';
+            document.querySelector('#email').value = '';
+            document.querySelector('#message').value = '';
+        }, 3000);
     } catch (error) {
         document.querySelector('#submit-btn').innerHTML = 'Failed to send!';
         setTimeout(() => {
