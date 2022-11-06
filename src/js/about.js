@@ -42,3 +42,17 @@ for (i = 0; i < interest.length; i++) {
         }
     });
 }
+
+const openSpotify = document.querySelector(".openSpotify");
+const spotifyModal = document.querySelector(".spotify__modal");
+const modalOverlay = document.querySelector(".modal__overlay");
+
+openSpotify.addEventListener("click", function () {
+    modalOverlay.style.display = "block";
+    spotifyModal.style.display = "block";
+});
+
+modalOverlay.addEventListener("click", function () {
+    spotifyModal.style.display = "none";
+    modalOverlay.style.display = "none";
+});
