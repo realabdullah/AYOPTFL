@@ -2,7 +2,7 @@ import { gsap, ScrollToPlugin } from "gsap/all";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const toPortfolio = document.querySelectorAll("#portfolio");
+const toPortfolio = document.querySelectorAll(".toportfolio");
 
 toPortfolio.forEach(element => {
     element.addEventListener("click", function () {

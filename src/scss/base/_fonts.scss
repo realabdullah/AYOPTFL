@@ -1,84 +1,95 @@
 @font-face {
-    font-family: 'Roobert';
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 400;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertRegular.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertRegular.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 400;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertRegularItalic.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertRegularItalic.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 200;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertLight.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertLight.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 200;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertLightItalic.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertLightItalic.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 500;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertMedium.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertMedium.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 500;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertMediumItalic.woff') format('woff');
-  }
-  
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertMediumItalic.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 600;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertSemiBold.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertSemiBold.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 600;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertSemiBoldItalic.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertSemiBoldItalic.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 700;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertBold.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertBold.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 700;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertBoldItalic.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertBoldItalic.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: normal;
     font-weight: 800;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertHeavy.woff') format('woff');
-  }
-  
-  @font-face {
-    font-family: 'Roobert';
+    src: url("/src/assets/fonts/RoobertHeavy.woff") format("woff");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roobert";
     font-style: italic;
     font-weight: 800;
-    src: url('https://raw.githubusercontent.com/nitrowo/roobert-cdn/master/RoobertHeavyItalic.woff') format('woff');
-  }
+    src: url("/src/assets/fonts/RoobertHeavyItalic.woff") format("woff");
+    font-display: swap;
+}
