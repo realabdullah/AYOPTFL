@@ -455,6 +455,10 @@ body {
         transform: translate(-50%, -50%);
         width: 80%;
         z-index: 2;
+
+        @media (max-width: 701px) {
+            width: 95%;
+        }
     }
 
     .modal__overlay {
