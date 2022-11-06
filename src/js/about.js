@@ -47,12 +47,32 @@ const openSpotify = document.querySelector(".openSpotify");
 const spotifyModal = document.querySelector(".spotify__modal");
 const modalOverlay = document.querySelector(".modal__overlay");
 
+let openPlaylist = new Timeline({
+    paused: true,
+});
+
+Tween.set(spotifyModal, { 
+    autoAlpha: 0, 
+    display: "none",
+    yPercent: -100,
+});
+
+openPlaylist.to(spotifyModal, {
+    autoAlpha: 1,
+    yPercent: 0,
+    display: "block",
+    duration: 0.4,
+    ease: "power1.inOut"
+}, 0);
+
+openPlaylist.progress(1).progress(0);
+
 openSpotify.addEventListener("click", function () {
     modalOverlay.style.display = "block";
-    spotifyModal.style.display = "block";
+    openPlaylist.play();
 });
 
 modalOverlay.addEventListener("click", function () {
-    spotifyModal.style.display = "none";
     modalOverlay.style.display = "none";
+    openPlaylist.reverse();
 });
