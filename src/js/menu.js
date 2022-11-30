@@ -19,7 +19,6 @@ const closeNavbar = () => {
 let isOpen = false;
 
 toggle.onclick = function () {
-    console.log("clicked");
     if (isOpen) {
         this.classList.remove("active");
         closeNavbar();

@@ -1,8 +1,8 @@
-import { gsap } from "gsap";
+import { gsap, ScrollTrigger } from "gsap/all";
 import { Timeline } from "gsap/gsap-core";
 import { Tween } from "gsap/gsap-core";
 
-gsap.registerPlugin(Timeline, Tween);
+gsap.registerPlugin(Timeline, Tween, ScrollTrigger);
 
 const interest = document.getElementsByClassName("interest__section-summary");
 const details = document.getElementsByClassName("interest__section-details");
@@ -16,7 +16,7 @@ for (i = 0; i < interest.length; i++) {
 
     Tween.set(details[i], { 
         autoAlpha: 0, 
-        visiblity: "hidden",
+        visibility: "hidden",
         height: 0,
         yPercent: -30,
     });
@@ -24,7 +24,7 @@ for (i = 0; i < interest.length; i++) {
     tl.to(details[i], {
         autoAlpha: 1,
         yPercent: 0,
-        visiblity: "visible",
+        visibility: "visible",
         height: "auto",
         duration: 0.8,
         ease: "power1.inOut"
@@ -35,7 +35,6 @@ for (i = 0; i < interest.length; i++) {
     interest[i].addEventListener("click", function () {
         expanded = !expanded;
         if (expanded) {
-            console.log(i)
             tl.play();
         } else {
             tl.reverse();
@@ -76,3 +75,49 @@ modalOverlay.addEventListener("click", function () {
     modalOverlay.style.display = "none";
     openPlaylist.reverse();
 });
+
+// import { gsap, ScrollTrigger } from "gsap/all";
+
+//scroll reveal
+function animateFrom(elem, direction) {
+    direction = direction || 1;
+    var x = 0,
+        y = direction * 100;
+    elem.style.transform = "translate(" + x + "px, " + y + "px)";
+    elem.style.opacity = "0";
+    gsap.fromTo(elem, { x: x, y: y, autoAlpha: 0 }, {
+        duration: 2.25,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: "expo",
+        overwrite: "auto"
+    });
+}
+
+function hide(elem) {
+    gsap.set(elem, { autoAlpha: 0 });
+}
+
+function scrollAnimation() {
+    // gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".reveal").forEach(function (elem) {
+        hide(elem); // assure that the element is hidden when scrolled into view
+
+        ScrollTrigger.create({
+            trigger: elem,
+            onEnter: function () { animateFrom(elem) },
+            onEnterBack: function () { animateFrom(elem, -1) },
+            onLeave: function () { hide(elem) } // assure that the element is hidden when scrolled into view
+        });
+    });
+};
+
+window.onload = function () {
+    scrollAnimation();
+};
+
+window.onunload = function () {
+    scrollAnimation();
+};
