@@ -11,7 +11,7 @@
     line-height: pxToRem(19);
     color: $col-white;
 
-    &:hover::after {
+    &:after {
         content: "";
         display: block;
         position: absolute;
@@ -23,5 +23,11 @@
         width: -webkit-fill-available;
         height: inherit;
         cursor: pointer;
+        opacity: 0;
+    }
+
+    &:hover::after {
+        transition: opacity 0.9s;
+        opacity: 1;
     }
 }
