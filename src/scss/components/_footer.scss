@@ -63,7 +63,8 @@
         line-height: pxToRem(19);
         color: $col-white;
         cursor: pointer;
-        margin-top: pxToRem(64);background: linear-gradient(to right, $col-white 50%, $col-navyBlue 50%);
+        margin-top: pxToRem(64);
+        background: linear-gradient(to right, $col-white 50%, $col-navyBlue 50%);
         background-size: 200% 100%;
         background-position: right bottom;
         transition: all .5s ease-out;
