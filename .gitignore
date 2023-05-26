@@ -1,7 +1,0 @@
-node_modules
-.parcel-cache
-dist
-.env
-yarn-error.log
-yarn.lock
-```
