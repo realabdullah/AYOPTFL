@@ -30,8 +30,6 @@ for (i = 0; i < interest.length; i++) {
         ease: "power1.inOut"
     }, 0);
 
-    tl.progress(1).progress(0);
-
     interest[i].addEventListener("click", function () {
         expanded = !expanded;
         if (expanded) {
@@ -76,8 +74,6 @@ modalOverlay.addEventListener("click", function () {
     openPlaylist.reverse();
 });
 
-// import { gsap, ScrollTrigger } from "gsap/all";
-
 //scroll reveal
 function animateFrom(elem, direction) {
     direction = direction || 1;
@@ -100,24 +96,16 @@ function hide(elem) {
 }
 
 function scrollAnimation() {
-    // gsap.registerPlugin(ScrollTrigger);
 
     gsap.utils.toArray(".reveal").forEach(function (elem) {
-        hide(elem); // assure that the element is hidden when scrolled into view
 
         ScrollTrigger.create({
             trigger: elem,
             onEnter: function () { animateFrom(elem) },
-            onEnterBack: function () { animateFrom(elem, -1) },
-            onLeave: function () { hide(elem) } // assure that the element is hidden when scrolled into view
         });
     });
 };
 
 window.onload = function () {
-    scrollAnimation();
-};
-
-window.onunload = function () {
     scrollAnimation();
 };
