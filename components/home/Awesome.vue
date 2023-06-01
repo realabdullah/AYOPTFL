@@ -22,6 +22,10 @@
     justify-content: flex-end;
     padding: 14.4rem 4.8rem;
 
+    @media (max-width: 700px) {
+        padding: 5.6rem 2rem;
+    }
+
     &__body {
         text-align: right;
 

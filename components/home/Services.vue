@@ -43,6 +43,10 @@ const services = [
     height: 100vh;
     @include setFlex(flex, flex-start, center, column);
 
+    @media (max-width: 700px) {
+        padding: 0 2rem;
+    }
+
     h3 {
         font-weight: 600;
         font-size: 6.4rem;

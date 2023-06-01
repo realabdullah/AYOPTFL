@@ -1,5 +1,9 @@
 <script lang="ts" setup>
+const isMenuOpen = ref(false);
 
+const toggleMenu = () => {
+    isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
 
 <template>
@@ -33,6 +37,8 @@
                     </nuxt-link>
                 </li>
             </ul>
+
+            <IconHamburger :variant="isMenuOpen ? 'close' : 'open'" class="hamburger" @click="toggleMenu" />
         </nav>
     </div>
 </template>
@@ -58,6 +64,10 @@
             align-items: center;
             gap: 4.8rem;
 
+            @media (max-width: 800px) {
+                display: none;
+            }
+
             li {
                 a {
                     color: $col-fadedWhite;
@@ -79,6 +89,10 @@
             align-items: center;
             gap: 4.8rem;
 
+            @media (max-width: 800px) {
+                display: none;
+            }
+
             li {
                 a {
                     color: $col-white;
@@ -86,6 +100,15 @@
                     font-size: 1.4rem;
                     line-height: 1.7rem;
                 }
+            }
+        }
+
+        .hamburger {
+            display: none;
+
+            @media (max-width: 800px) {
+                display: block;
+                cursor: pointer;
             }
         }
     }

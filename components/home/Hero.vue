@@ -29,6 +29,10 @@ section {
     position: relative;
     padding: 0 4.8rem;
 
+    @media (max-width: 700px) {
+        padding: 0 2rem;
+    }
+
     .hero-section {
 
         &__side-att {

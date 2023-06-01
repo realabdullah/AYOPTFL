@@ -15,15 +15,18 @@
                 <p>Big Architecture</p>
             </li>
             <li class="projects-cards__card">
-                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828611/AYPTFL/osan_neme1h.webp" alt="osan" />
+                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828611/AYPTFL/osan_neme1h.webp"
+                    alt="osan" />
                 <p>Osan</p>
             </li>
             <li class="projects-cards__card">
-                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465325/zgsbtqpc3tpnzianbfa8.png" alt="data lens" />
+                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465325/zgsbtqpc3tpnzianbfa8.png"
+                    alt="data lens" />
                 <p>Data Lens</p>
             </li>
             <li class="projects-cards__card">
-                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465323/gbfd3kynquvdhvknlphl.png" alt="mimi" />
+                <img src="https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465323/gbfd3kynquvdhvknlphl.png"
+                    alt="mimi" />
                 <p>Forene</p>
             </li>
         </ul>
@@ -33,6 +36,10 @@
 <style lang="scss" scoped>
 .projects {
     padding: 14.4rem 4.8rem;
+
+    @media (max-width: 700px) {
+        padding: 5.6rem 2rem;
+    }
 
     &-header {
         @include setFlex(flex, center, space-between, unset);
@@ -51,9 +58,24 @@
     }
 
     &-cards {
-        display: flex;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.6rem;
+        overflow-y: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media (max-width: 700px) {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 3rem;
+            padding-bottom: 4.8rem;
+            overflow-y: unset;
+        }
+
 
         &__card {
             @include setFlex(flex, flex-start, unset, column);
