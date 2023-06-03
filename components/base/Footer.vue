@@ -13,10 +13,10 @@
                     <div class="sitemap item-1">
                         <span class="sitemap-header">SITEMAP</span>
                         <ul>
-                            <li><a href="/">HOME</a></li>
-                            <li><a href="#" class="toportfolio">PORTFOLIO</a></li>
-                            <li><a href="/src/about.html">ABOUT</a></li>
-                            <li><a href="/src/contact.html">CONTACT</a></li>
+                            <li><nuxt-link to="/">HOME</nuxt-link></li>
+                            <li><nuxt-link to="/">PORTFOLIO</nuxt-link></li>
+                            <li><nuxt-link to="/about">ABOUT</nuxt-link></li>
+                            <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
                         </ul>
                     </div>
                     <div class="sitemap item-2">
@@ -139,7 +139,7 @@ footer {
 
                 .sitemap {
 
-                    .sitemap__header {
+                    .sitemap-header {
                         white-space: nowrap;
                         font-style: normal;
                         font-weight: 700;

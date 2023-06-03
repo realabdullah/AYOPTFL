@@ -18,6 +18,7 @@ button {
     font-size: 1.6rem;
     line-height: 1.9rem;
     color: $col-white;
+    cursor: pointer;
 
     &:after {
         content: "";
@@ -30,7 +31,6 @@ button {
         border: 2px solid $col-black;
         width: -webkit-fill-available;
         height: inherit;
-        cursor: pointer;
         opacity: 0;
     }
 

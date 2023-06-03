@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     css: ['~/assets/scss/main.scss'],
+
     vite: {
         css: {
             preprocessorOptions: {
@@ -13,7 +14,18 @@ export default defineNuxtConfig({
             },
         },
     },
+
     devServer: {
         port: 5500,
     },
+
+    runtimeConfig: {
+        public: {
+            serviceId: process.env.SERVICE_ID,
+            templateId: process.env.TEMPLATE_ID,
+            publicKey: process.env.PUBLIC_KEY,
+        }
+    },
+
+    modules: []
 })

@@ -1,4 +1,16 @@
 <script lang="ts" setup>
+const props = defineProps<{
+    page: string;
+}>();
+
+const color = computed(() => {
+    if (props.page === 'home') {
+        return '#FFFFFF';
+    }
+
+    return '#000000';
+});
+
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
@@ -16,25 +28,26 @@ const toggleMenu = () => {
             <ul class="header-nav__links">
                 <li><nuxt-link to="/">HOME</nuxt-link></li>
                 <li><nuxt-link to="/">PORTFOLIO</nuxt-link></li>
-                <li><nuxt-link to="/">ABOUT</nuxt-link></li>
-                <li><nuxt-link to="/">CONTACT</nuxt-link></li>
+                <li><nuxt-link to="/about">ABOUT</nuxt-link></li>
+                <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
             </ul>
 
             <ul class="header-nav__socials">
                 <li>
-                    <nuxt-link to="/">
+                    <a href="https://www.behance.net/ayoadenowo" target="_blank" rel="noopener noreferrer">
                         <IconBehance />
-                    </nuxt-link>
+                    </a>
                 </li>
                 <li>
-                    <nuxt-link to="/">
+                    <a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
+                        target="_blank" rel="noopener noreferrer">
                         <IconLinkedIn />
-                    </nuxt-link>
+                    </a>
                 </li>
                 <li>
-                    <nuxt-link to="/">
+                    <a href="https://twitter.com/AyomideAdenowo1" target="_blank" rel="noopener noreferrer">
                         <IconTwitter />
-                    </nuxt-link>
+                    </a>
                 </li>
             </ul>
 
@@ -50,13 +63,13 @@ const toggleMenu = () => {
 
     &-nav {
         padding: 2.5rem 0;
-        border-bottom: 1px solid $col-white;
+        border-bottom: 1px solid v-bind(color);
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         &__logo {
-            color: $col-white;
+            color: v-bind(color);
         }
 
         &__links {
@@ -70,15 +83,14 @@ const toggleMenu = () => {
 
             li {
                 a {
-                    color: $col-fadedWhite;
+                    color: v-bind(color);
                     font-weight: 600;
                     font-size: 1.4rem;
                     line-height: 1.7rem;
 
                     &:hover {
-                        color: $col-white;
                         padding-bottom: 0.4rem;
-                        border-bottom: 1px solid $col-white;
+                        border-bottom: 1px solid v-bind(color);
                     }
                 }
             }
@@ -95,7 +107,7 @@ const toggleMenu = () => {
 
             li {
                 a {
-                    color: $col-white;
+                    color: v-bind(color);
                     font-weight: 600;
                     font-size: 1.4rem;
                     line-height: 1.7rem;
