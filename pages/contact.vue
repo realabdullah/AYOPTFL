@@ -19,7 +19,8 @@ const sendMail = async () => {
             message: message.value
         };
 
-        emailjs.sendForm(runtimeConfig.public.serviceId, runtimeConfig.public.templateId, formEl.value, runtimeConfig.public.publicKey);
+        emailjs.send(runtimeConfig.public.serviceId, runtimeConfig.public.templateId, data as any, runtimeConfig.public.publicKey);
+        btnText.value = 'Sent!';
         setTimeout(() => {
             btnText.value = 'Send';
             name.value = '';
@@ -27,7 +28,6 @@ const sendMail = async () => {
             message.value = '';
         }, 2000);
     } catch (error) {
-        console.log("error ==> ", error);
         btnText.value = 'Fail to send!';
         setTimeout(() => {
             btnText.value = 'Send';
