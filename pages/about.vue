@@ -300,11 +300,13 @@ const openInterest = (index: number) => {
                         }
 
                         .openSpotify {
+                            margin: 0;
                             font-weight: 600;
                             font-size: 2.4rem;
                             line-height: 2.9rem;
                             border: 0;
                             background: transparent;
+                            color: $col-black;
                             text-decoration: underline;
                             cursor: pointer;
                         }
