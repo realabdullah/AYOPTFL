@@ -134,14 +134,14 @@ const openInterest = (index: number) => {
         </section>
     </main>
 
-    <div v-if="isSpotifyModalOpen" class="spotify__modal">
+    <div v-show="isSpotifyModalOpen" class="spotify__modal">
         <iframe style="border: radius 1.2rem;"
             src="https://open.spotify.com/embed/playlist/5OzvYB5Z7ZlLDuxbPjikAL?utm_source=generator&theme=0" width="100%"
             height="100%" frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
 
-    <div v-if="isSpotifyModalOpen" class="modal__overlay" @click="isSpotifyModalOpen = false">
+    <div v-show="isSpotifyModalOpen" class="modal__overlay" @click="isSpotifyModalOpen = false">
     </div>
 
     <BaseFooter />
