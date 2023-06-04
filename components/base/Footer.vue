@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 </script>
 
 <template>
@@ -45,7 +50,7 @@
                 <hr>
                 <div class="footer-section__attribution">
                     <span class="copyright">©2022 copyright. All rights reserved</span>
-                    <IconArrow variant="up" />
+                    <IconArrow variant="up" @click="scrollToTop" />
                     <span>A-yo!</span>
                 </div>
             </div>
@@ -227,6 +232,7 @@ footer {
                 align-items: center;
                 justify-content: space-between;
                 padding: 1.5rem 0;
+                position: relative;
 
                 span {
                     font-style: normal;
@@ -242,6 +248,9 @@ footer {
                 }
 
                 svg {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
                     cursor: pointer;
 
                     @media (max-width: 700px) {

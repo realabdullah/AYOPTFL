@@ -3,10 +3,6 @@ const interests = [
     {
         title: "Books",
         story: "I enjoy reading fictional books quite a bit, I believe it’s a good way to excercise my imagination quite a bit.I’m still unable to decide whether my favourite genre is mystery or thriller.At the moment I’m reading Dan Brown’s Digital Fortress and also going through George R.R.Martin’s series of Fire and Ice books with the hope of catching up to him before he finishes up the series.",
-        images: [
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828608/AYPTFL/digital-fortress_muxodm.webp",
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828609/AYPTFL/GOT_tqal01.webp",
-        ],
     },
     {
         title: "Music",
@@ -17,20 +13,10 @@ const interests = [
             "The Weeknd - Blinding Lights",
             "Cannons - Fire for you",
         ],
-        images: [
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828611/AYPTFL/human-condition_dxwhr6.webp",
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828613/AYPTFL/the-click_mskvcv.webp",
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828605/AYPTFL/blinding-light_dexgji.webp",
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828605/AYPTFL/artworks_eloqte.webp",
-        ]
     },
     {
         title: "Gaming",
         story: "Gaming got me into design and it’s fair to say I play quite a few games ranging from multiplayer fps like Call of Duty and Apex Legends to RPGs such as Skyrim. At the moment I’m currently enjoying the fascinating world of No Man’s Sky and the  occasional run of Hades.",
-        images: [
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828612/AYPTFL/no-mans-sky_edqjgp.webp",
-            "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828610/AYPTFL/hades_alg7dc.webp",
-        ]
     }
 ];
 const isInterestOpen = ref(false);
@@ -82,9 +68,6 @@ const openInterest = (index: number) => {
                                 </li>
                             </ul>
                             <button v-if="interest.title === 'Music'" class="openSpotify" @click="isSpotifyModalOpen = true">My Spotify Playlist</button>
-                        </div>
-                        <div class="interest__images">
-                            <img v-for="(image, index) in interest.images" :key="index" :src="image" alt="image">
                         </div>
                     </div>
                 </div>
@@ -317,6 +300,7 @@ const openInterest = (index: number) => {
                         font-size: 2.4rem;
                         line-height: 2.9rem;
                         color: $col-black;
+                        max-width: 700px;
                     }
 
                     .interest__image {
@@ -336,26 +320,6 @@ const openInterest = (index: number) => {
                                 width: 12.7rem;
                                 height: 19rem;
                             }
-                        }
-                    }
-
-                    .interest__images {
-                        display: grid;
-                        grid-template-columns: repeat(2, 17rem);
-                        grid-template-rows: repeat(2, 17rem);
-                        grid-column-gap: 2.4rem;
-                        grid-row-gap: 2.4rem;
-
-                        @media (max-width: 700px) {
-                            grid-template-columns: repeat(2, 1fr);
-                            grid-template-rows: repeat(2, 1fr);
-                            grid-column-gap: 2rem;
-                            grid-row-gap: 2rem;
-                        }
-
-                        img {
-                            width: 16rem;
-                            height: 16rem;
                         }
                     }
                 }
