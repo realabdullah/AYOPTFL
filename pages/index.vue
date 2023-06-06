@@ -21,22 +21,22 @@ const projects = [
     {
         title: "Big Architecture",
         image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828605/AYPTFL/big_vdkknk.webp",
-        link: "https://www.behance.net/ayoadenowo"
+        link: "https://www.figma.com/proto/gighypaIXwkH0leeqPFi9n/Big?type=design&node-id=125-10&scaling=scale-down-width&page-id=0%3A1"
     },
     {
         title: "Osan",
         image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828611/AYPTFL/osan_neme1h.webp",
-        link: "https://www.behance.net/gallery/147879007/Osan"
+        link: "https://www.figma.com/proto/C8O0AVBuDiX2lAZ64aAEMr/Osan?type=design&node-id=1-1174&scaling=scale-down-width&page-id=0%3A1"
     },
     {
         title: "Data Lens",
         image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465325/zgsbtqpc3tpnzianbfa8.png",
-        link: "https://www.behance.net/gallery/147879007/Osan"
+        link: "https://www.figma.com/proto/85BkluuL3zRsG97b5U0t4R/Data-Lens?type=design&node-id=1-8&scaling=scale-down-width&page-id=0%3A1"
     },
     {
         title: "Forene",
         image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1685465323/gbfd3kynquvdhvknlphl.png",
-        link: "https://www.behance.net/gallery/147879007/Osan"
+        link: "https://www.figma.com/proto/LfYG0FdgOj6m5hpAgriJWC/Forene?node-id=342-785&scaling=scale-down-width"
     },
     {
         title: "Contenta",
@@ -45,7 +45,7 @@ const projects = [
     },
     {
         title: "Mimi’s Threads ‘n’ Trends",
-        image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1669828611/AYPTFL/mimi_xbuqtn.webp",
+        image: "https://res.cloudinary.com/dxvhsze0l/image/upload/v1686089053/btewetp3afxfojup2e7e.png",
         link: "https://www.behance.net/gallery/145952867/Mimis-Threads-n-Trends"
     },
 ];
@@ -61,10 +61,19 @@ const scrollProjectsHorizontally = (mode: string) => {
         behavior: 'smooth'
     });
 
+    updateButtonState();
+};
+
+const updateButtonState = () => {
     const { scrollLeft, scrollWidth, clientWidth } = projectsContainer.value;
     scrollLeftBtnDisabled.value = scrollLeft === 0;
     scrollRightBtnDisabled.value = scrollLeft === scrollWidth - clientWidth;
 };
+
+onMounted(() => {
+    projectsContainer.value = document.getElementById('featured__projects');
+    projectsContainer.value.addEventListener('wheel', updateButtonState);
+});
 
 const goToContact = () => {
     navigateTo("/contact");
@@ -135,7 +144,7 @@ const goToContact = () => {
                     </div>
                 </div>
 
-                <div ref="projectsContainer" class="featured__projects--cards reveal">
+                <div ref="projectsContainer" class="featured__projects--cards reveal" @mousemove="scrollProjectsWithMouse">
                     <div v-for="(project, index) in projects" :key="index" class="featured__projects--card">
                         <img id="project_img" class="tall" :src="project.image" :alt="project.title"> <br>
                         <span>{{ project.title }}</span>
