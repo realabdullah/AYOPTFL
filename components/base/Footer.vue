@@ -29,8 +29,8 @@ const scrollToTop = () => {
                         <ul>
                             <li><a href="https://www.behance.net/ayoadenowo" target="_blank"
                                     rel="noopener noreferrer">BEHANCE</a></li>
-                            <li><a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
-                                    target="_blank" rel="noopener noreferrer">LINKEDIN</a></li>
+                            <li><a href="https://www.linkedin.com/in/ayomideadenowo/" target="_blank"
+                                    rel="noopener noreferrer">LINKEDIN</a></li>
                             <li><a href="https://twitter.com/AyomideAdenowo1" target="_blank"
                                     rel="noopener noreferrer">TWITTER</a></li>
                         </ul>
@@ -41,7 +41,7 @@ const scrollToTop = () => {
                             <li><a href="tel:+2348145030598">+234 8145 030 598</a></li>
                             <li><a href="mailto:adenowoayomide3@gmail.com">adenowoayomide3@gmail.com</a></li>
                         </ul>
-                        <a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
+                        <a href="https://drive.google.com/file/d/19dBxyNyTQamjQqQfv4rRi8ri7iRVbUl3/view?usp=sharing"
                             target="_blank" rel="noopener noreferrer">
                             <button>Resumé</button>
                         </a>

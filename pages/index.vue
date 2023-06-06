@@ -491,6 +491,7 @@ main {
                     text-decoration: none;
                     border-radius: 50%;
                     opacity: 0;
+                    white-space: nowrap;
                 }
 
                 &:hover {

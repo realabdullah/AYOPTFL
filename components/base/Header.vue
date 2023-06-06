@@ -57,7 +57,7 @@ const mobileMenuStyle = computed(() => {
                     </a>
                 </li>
                 <li>
-                    <a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
+                    <a href="https://www.linkedin.com/in/ayomideadenowo/"
                         target="_blank" rel="noopener noreferrer">
                         <IconLinkedIn />
                     </a>
@@ -90,7 +90,7 @@ const mobileMenuStyle = computed(() => {
                 <li><nuxt-link to="/about">ABOUT</nuxt-link></li>
                 <li><nuxt-link to="/contact">CONTACT</nuxt-link></li>
                 <li>
-                    <a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
+                    <a href="https://drive.google.com/file/d/19dBxyNyTQamjQqQfv4rRi8ri7iRVbUl3/view?usp=sharing"
                         target="_blank" rel="noopener noreferrer">
                         <button>Resumé</button>
                     </a>
@@ -102,7 +102,7 @@ const mobileMenuStyle = computed(() => {
                     <IconBehance />
                 </a>
 
-                <a href="https://docs.google.com/document/d/1rFh464HNn-HV5wimK8GXVLjyr4nY2crh1t-hto8YIC0/edit"
+                <a href="https://www.linkedin.com/in/ayomideadenowo/"
                     target="_blank" rel="noopener noreferrer">
                     <IconLinkedIn />
                 </a>
@@ -174,6 +174,10 @@ const mobileMenuStyle = computed(() => {
                     font-weight: 600;
                     font-size: 1.4rem;
                     line-height: 1.7rem;
+
+                    &:hover {
+                        opacity: 0.9;
+                    }
                 }
             }
         }
