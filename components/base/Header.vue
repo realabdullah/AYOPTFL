@@ -53,18 +53,18 @@ const mobileMenuStyle = computed(() => {
             <ul class="header-nav__socials">
                 <li>
                     <a href="https://www.behance.net/ayoadenowo" target="_blank" rel="noopener noreferrer">
-                        <IconBehance />
+                        <IconBehance class="icon" />
                     </a>
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/ayomideadenowo/"
                         target="_blank" rel="noopener noreferrer">
-                        <IconLinkedIn />
+                        <IconLinkedIn class="icon" />
                     </a>
                 </li>
                 <li>
                     <a href="https://twitter.com/AyomideAdenowo1" target="_blank" rel="noopener noreferrer">
-                        <IconTwitter />
+                        <IconTwitter class="icon" />
                     </a>
                 </li>
             </ul>
@@ -175,8 +175,12 @@ const mobileMenuStyle = computed(() => {
                     font-size: 1.4rem;
                     line-height: 1.7rem;
 
-                    &:hover {
-                        opacity: 0.9;
+                    .icon {
+                        transition: transform 0.3s ease;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
