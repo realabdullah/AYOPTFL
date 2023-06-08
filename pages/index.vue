@@ -108,9 +108,9 @@ const goToContact = () => {
 <template>
     <!-- PRE-LOADER -->
     <div class="preloader">
-        <h1 class="live">live</h1>
-        <h1 class="love">love</h1>
-        <h1 class="design">design</h1>
+        <h1 class="live">live<span>.</span></h1>
+        <h1 class="love">love<span>.</span></h1>
+        <h1 class="design">design<span>.</span></h1>
 
         <div class="first"></div>
         <div class="second"></div>
@@ -241,6 +241,10 @@ const goToContact = () => {
         @media (max-width: 700px) {
             font-size: 2.5rem;
             line-height: 3rem;
+        }
+
+        span {
+            color: $col-navyBlue;
         }
     }
 
