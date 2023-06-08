@@ -55,7 +55,6 @@ const projects = [
 const scrollLeftBtnDisabled = ref(true);
 const scrollRightBtnDisabled = ref(false);
 const projectsContainer = ref();
-const preloaderLoaded = ref(false);
 
 const scrollProjectsHorizontally = (mode: string) => {
     const scrollAmount = mode === 'left' ? -400 : 400;
@@ -86,10 +85,16 @@ onMounted(() => {
     tl.to(".love", { x: "-100%", opacity: 0, duration: 1 });
     tl.to(".design", { x: "-100%", opacity: 0, duration: 1 });
 
-    setTimeout(() => {
-        preloaderLoaded.value = true;
-    }, 7500);
+    // slide wrappers down
+    tl.to(".first", { y: 0, duration: 0.5 });
+    tl.to(".second", { y: "-10%", duration: 1 }, "-=1");
+    tl.to(".third", { y: "-20%", duration: 1 }, "-=1");
 
+    // hide preloader
+    tl.to(".preloader", { y: "200%", duration: 3 });
+
+    // show page content
+    tl.fromTo(".main", { opacity: 0, y: -20 }, { opacity: 1, duration: 1, y: 0 }, "-=3");
 
     projectsContainer.value = document.getElementById('featured__projects');
     projectsContainer.value.addEventListener('wheel', updateButtonState);
@@ -102,14 +107,18 @@ const goToContact = () => {
 
 <template>
     <!-- PRE-LOADER -->
-    <div v-show="!preloaderLoaded" class="preloader">
+    <div class="preloader">
         <h1 class="live">live</h1>
         <h1 class="love">love</h1>
         <h1 class="design">design</h1>
+
+        <div class="first"></div>
+        <div class="second"></div>
+        <div class="third"></div>
     </div>
 
     <!-- PAGE CONTENT -->
-    <main v-show="preloaderLoaded" style="padding: 0;">
+    <main class="main" style="padding: 0;">
         <section class="home__hero">
             <div class="home__hero--body">
                 <BaseHeader page="home" />
@@ -177,7 +186,7 @@ const goToContact = () => {
                         <img id="project_img" class="tall" :src="project.image" :alt="project.title"> <br>
                         <span>{{ project.title }}</span>
 
-                        <a class="view__project" :href="project.link" aria-label="Behance" target="_blank"
+                        <a v-if="index !== 4" class="view__project" :href="project.link" aria-label="Behance" target="_blank"
                             rel="noopener noreferrer">View →</a>
                     </div>
                 </div>
@@ -233,6 +242,26 @@ const goToContact = () => {
             font-size: 2.5rem;
             line-height: 3rem;
         }
+    }
+
+    .first,
+    .second,
+    .third {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateY(-100%);
+    }
+
+    .first,
+    .third {
+        background-color: $col-black;
+    }
+
+    .second {
+        background-color: $col-white;
     }
 }
 
