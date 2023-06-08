@@ -72,7 +72,11 @@ const updateButtonState = () => {
     scrollRightBtnDisabled.value = scrollLeft === scrollWidth - clientWidth;
 };
 
-onMounted(() => {
+const goToContact = () => {
+    navigateTo("/contact");
+};
+
+if (process.client) {
     const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
 
     // slide in
@@ -95,14 +99,12 @@ onMounted(() => {
 
     // show page content
     tl.fromTo(".main", { opacity: 0, y: -20 }, { opacity: 1, duration: 1, y: 0 }, "-=3");
+}
 
+onMounted(() => {
     projectsContainer.value = document.getElementById('featured__projects');
     projectsContainer.value.addEventListener('wheel', updateButtonState);
 });
-
-const goToContact = () => {
-    navigateTo("/contact");
-};
 </script>
 
 <template>
