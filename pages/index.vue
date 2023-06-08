@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import gsap from "gsap";
+
 const services = [
     {
         title: 'Product Design',
@@ -53,6 +55,7 @@ const projects = [
 const scrollLeftBtnDisabled = ref(true);
 const scrollRightBtnDisabled = ref(false);
 const projectsContainer = ref();
+const preloaderLoaded = ref(false);
 
 const scrollProjectsHorizontally = (mode: string) => {
     const scrollAmount = mode === 'left' ? -400 : 400;
@@ -71,6 +74,23 @@ const updateButtonState = () => {
 };
 
 onMounted(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+
+    // slide in
+    tl.to(".live", { x: "0%", opacity: 1, duration: 1 });
+    tl.to(".love", { x: "0%", opacity: 1, duration: 1 });
+    tl.to(".design", { x: "0%", opacity: 1, duration: 1 });
+
+    // slide out
+    tl.to(".live", { x: "-100%", opacity: 0, duration: 1, delay: 1 });
+    tl.to(".love", { x: "-100%", opacity: 0, duration: 1 });
+    tl.to(".design", { x: "-100%", opacity: 0, duration: 1 });
+
+    setTimeout(() => {
+        preloaderLoaded.value = true;
+    }, 7500);
+
+
     projectsContainer.value = document.getElementById('featured__projects');
     projectsContainer.value.addEventListener('wheel', updateButtonState);
 });
@@ -81,7 +101,15 @@ const goToContact = () => {
 </script>
 
 <template>
-    <main style="padding: 0;">
+    <!-- PRE-LOADER -->
+    <div v-show="!preloaderLoaded" class="preloader">
+        <h1 class="live">live</h1>
+        <h1 class="love">love</h1>
+        <h1 class="design">design</h1>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <main v-show="preloaderLoaded" style="padding: 0;">
         <section class="home__hero">
             <div class="home__hero--body">
                 <BaseHeader page="home" />
@@ -175,6 +203,39 @@ const goToContact = () => {
 </template>
 
 <style lang="scss" scoped>
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: $col-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14rem;
+
+    @media (max-width: 700px) {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    h1 {
+        font-weight: 600;
+        font-size: 6.4rem;
+        line-height: 7.7rem;
+        color: $col-white;
+        opacity: 0;
+        transform: translateX(-1000%);
+
+        @media (max-width: 700px) {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+    }
+}
+
 main {
     .home__hero {
         background: $col-navyBlue;
