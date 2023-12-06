@@ -98,12 +98,15 @@ if (process.client) {
     tl.to(".preloader", { y: "200%", duration: 3 });
 
     // show page content
-    tl.fromTo(".main", { opacity: 0, y: -20 }, { opacity: 1, duration: 1, y: 0 }, "-=3");
+    tl.fromTo(".main", { display: "none", opacity: 0, y: -20 }, { display: "block", opacity: 1, duration: 1, y: 0 }, "-=3");
 }
 
 onMounted(() => {
-    projectsContainer.value = document.getElementById('featured__projects');
     projectsContainer.value.addEventListener('wheel', updateButtonState);
+});
+
+onBeforeUnmount(() => {
+    projectsContainer.value.removeEventListener('wheel', updateButtonState);
 });
 </script>
 
@@ -183,7 +186,7 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div ref="projectsContainer" class="featured__projects--cards reveal" @mousemove="scrollProjectsWithMouse">
+                <div ref="projectsContainer" class="featured__projects--cards reveal">
                     <div v-for="(project, index) in projects" :key="index" class="featured__projects--card">
                         <img id="project_img" class="tall" :src="project.image" :alt="project.title"> <br>
                         <span>{{ project.title }}</span>
@@ -209,8 +212,8 @@ onMounted(() => {
                 <BaseButton style="margin: 0 auto; margin-top: 3.2rem;" text="Let's Talk" @click="goToContact" />
             </div>
         </section>
+        <BaseFooter />
     </main>
-    <BaseFooter />
 </template>
 
 <style lang="scss" scoped>
@@ -277,6 +280,7 @@ main {
 
         &--body {
             height: 100vh;
+            max-height: 1000px;
             max-width: 1500px;
             margin: 0 auto;
             padding: 0 3rem;
@@ -363,6 +367,7 @@ main {
         }
 
         &--cards {
+            width: 100%;
             margin-top: 7rem;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -580,6 +585,10 @@ main {
 
                 img {
                     object-fit: cover;
+
+                    @media (max-width: 700px) {
+                        width: 100%;
+                    }
                 }
 
                 .view__project {

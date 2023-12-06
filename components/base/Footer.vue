@@ -68,77 +68,27 @@ footer {
     }
 
     .footer {
+        width: 100%;
         max-width: 1500px;
         margin: 0 auto;
 
-        @media (max-width: 700px) {
-            max-width: unset;
-            margin: unset;
-        }
-
         &-section {
             &__body {
+                width: 100%;
                 padding: 14.3rem 0;
                 display: grid;
-                grid-template-rows: 1fr 1fr;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                grid-template-areas:
-                    "label0 label0 label1 label2 label3"
-                    "label0 label0 label1 label2 label3";
+                grid-template-columns: repeat(4, 1fr);
                 gap: 4rem;
 
-                @media (max-width: 514px) {
-                    grid-template-areas:
-                        "label0 label0 label0 label0"
-                        "label1 label1 label2 label2"
-                        "label3 label3 label3 label3";
-                    gap: 0;
-                }
-
-                @media (min-width: 515px) and (max-width: 900px) {
-                    grid-template-areas:
-                        "label0 label0 label0 label0"
-                        "label1 label2 label3 label3";
-                    gap: 5rem;
-                }
-
-                @media (min-width: 901px) and (max-width: 1145px) {
-                    grid-template-areas:
-                        "label0 label1 label1 label2"
-                        "label3 label3 label3 label3";
-                }
-
-                .item-0 {
-                    grid-area: label0;
-                }
-
-                .item-1 {
-                    grid-area: label1;
-                }
-
-                .item-2 {
-                    grid-area: label2;
-                }
-
-                .item-3 {
-                    grid-area: label3;
+                @media (max-width: 700px) {
+                    grid-template-columns: repeat(1, 1fr);
+                    gap: 3rem;
+                    padding: 5.6rem 0;
                 }
 
                 &-logo {
                     @media (max-width: 700px) {
-                        width: max-content;
                         margin-bottom: 3rem;
-                    }
-
-                    @media (min-width: 701px) and (max-width: 850px) {
-                        width: max-content;
-                        margin-bottom: 3rem;
-                    }
-
-                    svg {
-                        @media (max-width: 700px) {
-                            width: max-content;
-                        }
                     }
                 }
 
